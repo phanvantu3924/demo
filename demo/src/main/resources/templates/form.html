@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>CSRF Demo</title></head>
+<body>
+<h2>Gửi dữ liệu</h2>
+<form th:action="@{/form}" method="post">
+    <input type="text" name="message" placeholder="Nhập tin nhắn"/>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <button type="submit">Gửi</button>
+</form>
+<p th:text="${msg}"></p>
+</body>
+</html>
